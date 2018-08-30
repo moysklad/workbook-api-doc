@@ -1,0 +1,35 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product: Workbook API
+  folders:
+
+  - title: Введение
+    output: web
+    type: frontmatter
+    folderitems:
+
+    - title: Первые шаги
+      url: /first_steps.html
+      output: web
+      type: frontmatter
+
+  - title: Статьи
+    output: web
+    type: frontmatter
+    folderitems:
+
+    - title: Введение
+      url: /about_json_api.html
+      output: web
+      type: frontmatter
+
+      subfolders:
+      - title: JSON API
+        output: web
+        subfolderitems:
+
+        - title: Листание
+          url: /paging.html
+          output: web

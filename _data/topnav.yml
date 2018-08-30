@@ -1,0 +1,30 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/moysklad/workbook-api
+#    - title: News
+#      url: /news
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Ресурсы
+      folderitems:
+        - title: JSON API
+          external_url: https://online.moysklad.ru/api/remap/1.1/doc/
+        - title: POS API
+          external_url: https://online.moysklad.ru/api/posap/1.0/doc/index.html
+        - title: Phone API
+          external_url: https://online.moysklad.ru/api/phone/1.0/doc/index.html
+        - title: Форум
+          external_url: https://support.moysklad.ru/hc/ru/community/topics
+        - title: SDK
+          external_url: https://dev.moysklad.ru/#sdk
+    - title: Разделы
+      folderitems:
+        - title: Workbook API
+          url: /first_steps.html
