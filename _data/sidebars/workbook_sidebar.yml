@@ -33,3 +33,8 @@ entries:
         - title: Листание
           url: /paging.html
           output: web
+
+    - title: Вебхуки
+      url: /webhooks.html
+      output: web
+      type: frontmatter
