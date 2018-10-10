@@ -34,6 +34,10 @@ entries:
           url: /paging.html
           output: web
 
+        - title: Публикации
+          url: /publication.html
+          output: web
+
     - title: Вебхуки
       url: /webhooks.html
       output: web
