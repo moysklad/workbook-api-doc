@@ -1,5 +1,5 @@
 ---
-title: Публикация документов, особенности работы со ссылками на файлы
+title: Публикация документов
 tags: []
 keywords:
 summary:
@@ -35,118 +35,6 @@ folder: workbook
 + Розничный возврат
 + Розничная продажа
 + Договор
-
-## Создание публикаций в JSON API
-
-Создание публикаций возможно средствами JSON API. Чтобы создать публикацию нужен документ, например, заказ покупателя, и [шаблон печатной формы](#шаблоны-печатной-формы) - встроенный или пользовательский.
-
-Создадим публикацию для заказа покупателя
-
-``` shell
-curl 
-    -X PUT 
-    -u login:password 
-    -H "Content-Type: application/json" 
-    -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
-    -d '{
-          "template": {
-            "meta": {
-              "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
-              "type": "embeddedtemplate",
-              "mediaType": "application/json"
-            }
-          }
-        }'
-```
-
-В ответ возвращается JSON представление публикации. Если такая публикация уже существовала, код ответа 200. Если публикация была создана - 201.
-```json
-{
-  "meta": {
-    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
-    "type": "operationpublication",
-    "mediaType": "application/json"
-  },
-  "template": {
-    "meta": {
-      "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
-      "type": "embeddedtemplate",
-      "mediaType": "application/json"
-    }
-  },
-  "href": "https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
-}
-```
-
-## Ссылки публикаций
-
-По ссылке публикации (например, https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html) открывается страница, с которой можно скачать pdf-документ. 
-
- ![useful image]({{ site.url }}/images/publication/publication_download.png)
- 
-По ссылке будет доступна самая последняя версия документа, даже если вы вносите изменения в документ после его отправки.
-
-Ссылка будет доступна, пока не удалена публикация.
-
-Удалим созданную публикацию заказа покупателя. Сначала запросим список всех публикаций:
-``` shell
-curl 
-    -X GET 
-    -u login:password 
-    -H "Lognex-Pretty-Print-JSON: true" 
-    "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
-```
-Ответ:
-```json
-{
-    "context": {
-        "employee": {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
-                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
-                "type": "employee",
-                "mediaType": "application/json"
-            }
-        }
-    },
-    "meta": {
-        "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication",
-        "type": "demand",
-        "mediaType": "application/json",
-        "size": 1,
-        "limit": 25,
-        "offset": 0
-    },
-    "rows": [
-        {
-            "meta": {
-                "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
-                "type": "operationpublication",
-                "mediaType": "application/json"
-            },
-            "template": {
-                "meta": {
-                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
-                    "type": "embeddedtemplate",
-                    "mediaType": "application/json"
-                }
-            },
-            "href": "https://doc.moysklad.ru/board/45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7/publication/242ce894-b0fc-4090-a4bd-2ddd1e2a910b.html"
-        }
-    ]
-}
-```
-Запрос на удаление публикации
-``` shell
-curl 
-    -X DELETE 
-    -u login:password 
-    -H "Content-Type: application/json" 
-    -H "Lognex-Pretty-Print-JSON: true" 
-    ""https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003"
-```
-
 
 ## Шаблоны печатной формы
 
@@ -242,6 +130,123 @@ curl
 }
 ```
 
-По ссылке из поля *content* можно скачать сам шаблон. 
+По ссылке из поля **content** можно скачать сам шаблон. 
 
 Изменение или удаление шаблонов печатных форм через JSON API невозможно.
+
+## Создание публикаций в JSON API
+
+Создание публикаций возможно средствами JSON API. Чтобы создать публикацию нужен документ, например, заказ покупателя, и шаблон печатной формы - встроенный или пользовательский.
+
+Создадим публикацию для заказа покупателя
+
+``` shell
+curl 
+    -X PUT 
+    -u login:password 
+    -H "Content-Type: application/json" 
+    -H "Lognex-Pretty-Print-JSON: true" 
+    "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
+    -d '{
+          "template": {
+            "meta": {
+              "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+              "type": "embeddedtemplate",
+              "mediaType": "application/json"
+            }
+          }
+        }'
+```
+
+В ответ возвращается JSON представление публикации. Если такая публикация уже существовала, код ответа 200. Если публикация была создана - 201.
+```json
+{
+  "meta": {
+    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
+    "type": "operationpublication",
+    "mediaType": "application/json"
+  },
+  "template": {
+    "meta": {
+      "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+      "type": "embeddedtemplate",
+      "mediaType": "application/json"
+    }
+  },
+  "href": "https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html"
+}
+```
+
+### Список всех публикаций
+
+Также можно запросить список всех публикаций документа.
+``` shell
+curl 
+    -X GET 
+    -u login:password 
+    -H "Lognex-Pretty-Print-JSON: true" 
+    "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication" 
+```
+Ответ:
+```json
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication",
+        "type": "demand",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 25,
+        "offset": 0
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003",
+                "type": "operationpublication",
+                "mediaType": "application/json"
+            },
+            "template": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customerorder/metadata/embeddedtemplate/6ffea5e5-1b69-4a88-be59-4856281d439c",
+                    "type": "embeddedtemplate",
+                    "mediaType": "application/json"
+                }
+            },
+            "href": "https://doc.moysklad.ru/board/45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7/publication/242ce894-b0fc-4090-a4bd-2ddd1e2a910b.html"
+        }
+    ]
+}
+```
+
+### Удаление публикаций
+
+Через JSON API можно удалить публикацию:
+``` shell
+curl 
+    -X DELETE 
+    -u login:password 
+    -H "Content-Type: application/json" 
+    -H "Lognex-Pretty-Print-JSON: true" 
+    ""https://online.moysklad.ru/api/remap/1.1/entity/customerorder/53e988fd-c7c9-11e8-9dd2-f3a3000000cd/publication/aec51463-bbd2-11e6-8a84-bae500000003"
+```
+
+
+## Ссылки публикаций
+
+По ссылке публикации (например, https://doc.moysklad.ru/board/ef371086-c7c8-11e8-9dd2-f3a300000000/publication/aec51463-bbd2-11e6-8a84-bae500000003.html) открывается страница, с которой можно скачать pdf-документ. 
+
+ ![useful image]({{ site.url }}/images/publication/publication_download.png)
+ 
+По ссылке будет доступна самая последняя версия документа, даже если вы вносите изменения в документ после его публикации.
+
+Ссылка будет доступна, пока не удалена публикация.
