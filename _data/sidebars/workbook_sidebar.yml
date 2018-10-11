@@ -38,6 +38,10 @@ entries:
           url: /publication.html
           output: web
 
+        - title: Доп. поля
+          url: /attributes.html
+          output: web
+
     - title: Вебхуки
       url: /webhooks.html
       output: web
