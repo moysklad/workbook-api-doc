@@ -22,7 +22,7 @@ entries:
 
     - title: JSON API
       output: web
-      subfolderitems:
+      folderitems:
 
       - title: Листание
         url: /paging.html
