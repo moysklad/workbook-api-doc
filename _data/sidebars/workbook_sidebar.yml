@@ -20,18 +20,22 @@ entries:
     type: frontmatter
     folderitems:
 
-    - title: JSON API
+    - title: Введение
       output: web
-      folderitems:
+      type: frontmatter
 
-      - title: Листание
-        url: /paging.html
+      subfolders:
+      - title: JSON API
         output: web
+        subfolderitems:
 
-      - title: Публикации
-        url: /publication.html
-        output: web
-      
+        - title: Листание
+          url: /paging.html
+          output: web
+
+        - title: Публикации
+          url: /publication.html
+          output: web
 
     - title: Вебхуки
       url: /webhooks.html
