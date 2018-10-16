@@ -111,8 +111,7 @@ curl -X POST \
    {
       "name":"Pencil Blue",
       "weight":0.11,
-      "weighed":true,
-      "syncId":"9b7c97cf-cf77-4f7e-b200-d264125578ab"
+      "weighed":true
    },
    {
       "name":"Pencil Red",
@@ -256,4 +255,6 @@ curl -X GET \
 | 7b7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш желтый |
 | 8b7c97cf-cf77-4f7e-b200-d264125578ab|12345 |
 | 8c7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш зеленый |
-| 9b7c97cf-cf77-4f7e-b200-d264125578ab|Pencil Blue |
+| null |Pencil Blue |
+
+У товара `Pencil Blue` отсутствует значение поля `syncId`, поэтому при сортировке по возрастанию, оно выводится в конце. Аналогичное поведение и для других полей со значением `null`.
