@@ -29,6 +29,10 @@ entries:
         output: web
         subfolderitems:
 
+        - title: Метаданные
+          url: /meta.html
+          output: web
+
         - title: Листание
           url: /paging.html
           output: web
