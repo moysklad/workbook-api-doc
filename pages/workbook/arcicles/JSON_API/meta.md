@@ -33,7 +33,7 @@ folder: workbook
 Рассмотрим запрос контрагента `ООО "Поставщик"`
 ```shell
 curl -X GET \
-  https://online.moysklad.ru/api/remap/1.1/entity/counterparty \
+  https://online.moysklad.ru/api/remap/1.1/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d \
   -H 'Authorization: Basic token==' \
   -H 'Cache-Control: no-cache'
 ```
