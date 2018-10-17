@@ -23,58 +23,58 @@ folder: workbook
 
 | Endpoint (справочники) | Сортируемые поля |
 |----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Контрагент](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%8B-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `archived`, `created`, `inn`, `actualAddress`, `legalTitle`, `legalAddress`, `kpp`, `phone`, `email`, `fax`, `discountCardNumber`, `priceType` |
-| [Валюта](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D0%B0-%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B-get)|`id`, `accountId`, `name`, `archived`, `shared`, `default`, `fullname`, `code`, `isoCode`, `multiplicity`                                                                                                                                      |
-| [Товар](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%82%D0%BE%D0%B2%D0%B0%D1%80-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`,  `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `syncId`, `vat`, `isSerialTrackable`, `article`, `weighed`, `weight`, `volume`, `minimumBalance`                  |
-| [Услуга](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `syncId`                                                                                             |
-| [Комплект](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D1%8B-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `syncId`, `article`, `weight`, `volume`                                                                    |
-| [Группа товаров](https://online.moysklad.ru/api/remap/1.1/doc/index.html#группа-товаров-группы-товаров-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`                                                                                                     |
-| [Модификация](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D1%8F-%D0%BC%D0%BE%D0%B4%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%86%D0%B8%D0%B8-get)|`name`, `description`, `code`,  `externalCode`, `archived`                                                                                                                                                                           |
-| [Серия](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D0%B5%D1%80%D0%B8%D0%B8-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`                                                                                                                      |
-| [Договор](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8B-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `archived`, `moment`                                                                                                       |
-| [Проект](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`, `archived`                                                                                                            |
-| [Статья расходов](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2-%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`                                                                                                                      |
-| [Страна](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%8B-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`                                                                                                                      |
-| [Отдел](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BE%D1%82%D0%B4%D0%B5%D0%BB-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8B-get)|`id`, `accountId`                                                                                                                                                                                                              |
-| [Единица измерения](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D1%8B-%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-get)|`id`,  `accountId`, `name`, `archived`, `shared`, `default`, `fullname`, `code`, `isoCode`, `multiplicity`                                                                                                                                     |
-| [Сотрудник](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA-%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8-get)|`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`,`archived`,`email`,`phone`,`lastname`, `firstname`, `middlename`, `uid`                                                               |
-| [Склад](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%BA%D0%BB%D0%B0%D0%B4-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`, `address`, `active`                                                                                                     |
-| [Юрлицо](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%8E%D1%80%D0%BB%D0%B8%D1%86%D0%BE-%D1%8E%D1%80%D0%BB%D0%B8%D1%86%D0%B0-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`, `archived`, `created`, `inn`, `actualAddress`, `legalTitle`, `legalAddress`, `kpp`, `phone`, `email`, `fax`                             |
-| [Точка продаж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D1%82%D0%BE%D1%87%D0%BA%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-get)|`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`, `address`, `active`                                                                                                     |
-| [Задача](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-get)|`id`, `accountId`, `created`, `version`, `updated`, `deleted`, `description`, `dueToDate`, `done`                                                                                                                                            |                                                                                                                                                                                                                           |                                                                                                                                                                                                        |
+| [Контрагент](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82-%D0%BA%D0%BE%D0%BD%D1%82%D1%80%D0%B0%D0%B3%D0%B5%D0%BD%D1%82%D1%8B-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `created`, `phone`, `email` |
+| [Ассортимент](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B0%D1%81%D1%81%D0%BE%D1%80%D1%82%D0%B8%D0%BC%D0%B5%D0%BD%D1%82-%D0%B0%D1%81%D1%81%D0%BE%D1%80%D1%82%D0%B8%D0%BC%D0%B5%D0%BD%D1%82-get)| `name`, `code` |
+| [Валюта](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D0%B0-%D0%B2%D0%B0%D0%BB%D1%8E%D1%82%D1%8B-get)|`id`, `name`, `archived`, `default`, `fullname`, `code`, `isoCode`, `multiplicity` |
+| [Товар](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%82%D0%BE%D0%B2%D0%B0%D1%80-%D1%82%D0%BE%D0%B2%D0%B0%D1%80%D1%8B-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `code`, `externalCode`, `archived`, `pathName`, `isSerialTrackable`, `weighed`, `weight`, `volume` |
+| [Услуга](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B0-%D1%83%D1%81%D0%BB%D1%83%D0%B3%D0%B8-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `code`, `externalCode`, `archived`, `pathName` |
+| [Комплект](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D1%8B-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `pathName`, `article`, `weight`, `volume` |
+| [Группа товаров](https://online.moysklad.ru/api/remap/1.1/doc/index.html#группа-товаров-группы-товаров-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `externalCode`, `archived`, `pathName` |
+| [Серия](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%B5%D1%80%D0%B8%D1%8F-%D1%81%D0%B5%D1%80%D0%B8%D0%B8-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
+| [Договор](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80-%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D1%8B-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `archived`, `moment` |
+| [Проект](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%8B-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `code`,`externalCode`, `archived` |
+| [Статья расходов](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2-%D1%81%D1%82%D0%B0%D1%82%D1%8C%D0%B8-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BE%D0%B2-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
+| [Страна](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D1%8B-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode` |
+| [Отдел](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BE%D1%82%D0%B4%D0%B5%D0%BB-%D0%BE%D1%82%D0%B4%D0%B5%D0%BB%D1%8B-get)|`id` |
+| [Единица измерения](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D0%B0-%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B5%D0%B4%D0%B8%D0%BD%D0%B8%D1%86%D1%8B-%D0%B8%D0%B7%D0%BC%D0%B5%D1%80%D0%B5%D0%BD%D0%B8%D1%8F-get)|`id`,`name`, `archived`, `default`, `fullname`, `code`, `isoCode`, `multiplicity` |
+| [Сотрудник](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA-%D1%81%D0%BE%D1%82%D1%80%D1%83%D0%B4%D0%BD%D0%B8%D0%BA%D0%B8-get)|`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`,`archived`,`email`,`phone`,`lastname`, `firstname`, `middlename`, `uid` |
+| [Склад](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%81%D0%BA%D0%BB%D0%B0%D0%B4-%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `code`,`address`, `archived` |
+| [Юрлицо](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%8E%D1%80%D0%BB%D0%B8%D1%86%D0%BE-%D1%8E%D1%80%D0%BB%D0%B8%D1%86%D0%B0-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`, `archived`, `created`, `inn`, `actualAddress`, `legalTitle`, `legalAddress`, `kpp`, `phone`, `email`, `fax` |
+| [Точка продаж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D1%82%D0%BE%D1%87%D0%BA%D0%B0-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-%D1%82%D0%BE%D1%87%D0%BA%D0%B8-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`, `address`, `active` |
+| [Задача](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B0-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8-get)|`id`, `created`, `version`, `updated`, `description`, `dueToDate`, `done` |
 
 | Endpoint (документы) | Сортируемые поля |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Розничная смена](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D1%81%D0%BC%D0%B5%D0%BD%D1%8B-get)               |`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`, `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `closeDate`                                              |
-| [Оприходования](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BE%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-get)                 |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`,  `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`,  `sum`, `isDeleted`, `created`                                                   |
-| [Заказ покупателя](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-get)              |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`,  `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`,  `sum`, `isDeleted`, `created`, `deliveryPlannedMoment`                            |
-| [Заказ поставщику](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D1%83-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC-get)              |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`,  `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`,  `sum`, `isDeleted`, `created`, `deliveryPlannedMoment`                            |
-| [Счет покупателю](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D1%91%D1%82-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8E-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC-get)               |`id`,   `accountId`, `shared`, `version`, `updated`,   `updatedBy`, `deleted`,   `name`, `description`, `code`,   `externalCode`,   `syncId`, `moment`, `applicable`,   `sum`, `isDeleted`, `created`                                             |
-| [Счет поставщика](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D1%91%D1%82-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%BE%D0%B2-get)               |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `incomingNumber`, `incomingDate`, `paymentPlannedMoment` |
-| [Входящий платеж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6-%D0%B2%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8-get)               |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `paymentPurpose`, `incomingNumber`, `incomingDate`       |
-| [Исходящий платеж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8-get)              |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `paymentPurpose`                                     |
-| [Приходный ордер](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9-%D0%BE%D1%80%D0%B4%D0%B5%D1%80-%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%BE%D1%80%D0%B4%D0%B5%D1%80%D0%B0-get)               |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `paymentPurpose`                                     |
-| [Расходный ордер](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9-%D0%BE%D1%80%D0%B4%D0%B5%D1%80-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%BE%D1%80%D0%B4%D0%B5%D1%80%D0%B0-get)               |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `paymentPurpose`                                     |
-| [Отгрузка](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8-get)                      |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Приемка](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B0-%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B8-get)                       |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Списание](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-get)                      |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Перемещение](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-get)                   |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Розничная продажа](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8-get)             |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Розничный возврат](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-get)             |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Внесение денег](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-get)                |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Выплата денег](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%D1%8B-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-get)                 |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Возврат покупателя](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-get)            |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Возврат поставщику](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D1%83-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC-get)            |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Счет-фактура выданный](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D0%B5%D1%82-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D1%8B-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-get)         |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Счет-фактура полученный](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D0%B5%D1%82-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D1%8B-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-get)       |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Инвентаризация](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-get)                |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Полученный отчет комиссионера](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BE%D1%82%D1%87%D1%91%D1%82-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D1%87%D1%91%D1%82%D1%8B-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-get) |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `incomingDate`                                       |
-| [Выданный отчет комиссионера](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BE%D1%82%D1%87%D1%91%D1%82-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D1%87%D1%91%D1%82%D1%8B-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-get)   |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Прайс-лист](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82-%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82%D1%8B-get)                    |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`                                                     |
-| [Тех. карта](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%82%D0%B5%D1%85.-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D1%82%D0%B5%D1%85.-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-get)                     |`id`, `accountId`, `shared`, `version`, `updated`, `updatedBy`, `deleted`, `name`, `description`, `code`, `externalCode`                                                                                                              |
-| [Заказ на производство](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-get)         |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `deliveryPlannedMoment`, `quantity`                    |
-| [Тех. операция](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%82%D0%B5%D1%85.-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%82%D0%B5%D1%85.-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8-get)                 |`id`,  `accountId`, `shared`, `version`, `updated`,  `updatedBy`, `deleted`, `name`, `description`, `code`,  `externalCode`,  `syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `quantity`                                           |
-| [Внутренний заказ](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-get)              |`id`,`accountId`, `shared`, `version`, `updated`,`updatedBy`, `deleted`, `name`, `description`, `code`,`externalCode`,`syncId`, `moment`, `applicable`, `sum`, `isDeleted`, `created`, `quantity`                                               |
+| [Розничная смена](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D1%81%D0%BC%D0%B5%D0%BD%D0%B0-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D1%81%D0%BC%D0%B5%D0%BD%D1%8B-get) |`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `moment`, `applicable`, `sum`, `created`, `closeDate`|
+| [Оприходования](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BE%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BE%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-get) |`id`,`version`, `updated`,`updatedBy`,`name`, `description`, `code`,`externalCode`,`moment`, `applicable`,`sum`, `created` |
+| [Заказ покупателя](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-get)|`id`,`version`, `updated`,`updatedBy`,`name`, `description`, `code`,`externalCode`,`moment`, `applicable`,`sum`, `created`, `deliveryPlannedMoment`|
+| [Заказ поставщику](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D1%83-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC-get)|`id`,`version`, `updated`,`updatedBy`,`name`, `description`, `code`,`externalCode`,`moment`, `applicable`,`sum`, `created`, `deliveryPlannedMoment`|
+| [Счет покупателю](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D1%91%D1%82-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8E-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F%D0%BC-get) |`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`, `moment`, `applicable`, `sum`, `created` |
+| [Счет поставщика](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D1%91%D1%82-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%BE%D0%B2-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `incomingNumber`, `incomingDate`, `paymentPlannedMoment` |
+| [Входящий платеж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6-%D0%B2%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `paymentPurpose`, `incomingNumber`, `incomingDate` |
+| [Исходящий платеж](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B9-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6-%D0%B8%D1%81%D1%85%D0%BE%D0%B4%D1%8F%D1%89%D0%B8%D0%B5-%D0%BF%D0%BB%D0%B0%D1%82%D0%B5%D0%B6%D0%B8-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `paymentPurpose` |
+| [Приходный ордер](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9-%D0%BE%D1%80%D0%B4%D0%B5%D1%80-%D0%BF%D1%80%D0%B8%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%BE%D1%80%D0%B4%D0%B5%D1%80%D0%B0-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `paymentPurpose` |
+| [Расходный ордер](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9-%D0%BE%D1%80%D0%B4%D0%B5%D1%80-%D1%80%D0%B0%D1%81%D1%85%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%BE%D1%80%D0%B4%D0%B5%D1%80%D0%B0-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `paymentPurpose` |
+| [Отгрузка](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B0-%D0%BE%D1%82%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Приемка](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B0-%D0%BF%D1%80%D0%B8%D1%91%D0%BC%D0%BA%D0%B8-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Списание](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Перемещение](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Розничная продажа](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B0-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%BF%D1%80%D0%BE%D0%B4%D0%B0%D0%B6%D0%B8-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Розничный возврат](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D1%80%D0%BE%D0%B7%D0%BD%D0%B8%D1%87%D0%BD%D1%8B%D0%B5-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Внесение денег](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D0%B5-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-%D0%B2%D0%BD%D0%B5%D1%81%D0%B5%D0%BD%D0%B8%D1%8F-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Выплата денег](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%D0%B0-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-%D0%B2%D1%8B%D0%BF%D0%BB%D0%B0%D1%82%D1%8B-%D0%B4%D0%B5%D0%BD%D0%B5%D0%B3-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Возврат покупателя](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Возврат поставщику](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D1%83-%D0%B2%D0%BE%D0%B7%D0%B2%D1%80%D0%B0%D1%82%D1%8B-%D0%BF%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D1%89%D0%B8%D0%BA%D0%B0%D0%BC-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Счет-фактура выданный](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D0%B5%D1%82-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D1%8B-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Счет-фактура полученный](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%81%D1%87%D0%B5%D1%82-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D1%81%D1%87%D0%B5%D1%82%D0%B0-%D1%84%D0%B0%D0%BA%D1%82%D1%83%D1%80%D1%8B-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Инвентаризация](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B8%D0%BD%D0%B2%D0%B5%D0%BD%D1%82%D0%B0%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Полученный отчет комиссионера](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BE%D1%82%D1%87%D1%91%D1%82-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D1%87%D1%91%D1%82%D1%8B-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `incomingDate` |
+| [Выданный отчет комиссионера](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9-%D0%BE%D1%82%D1%87%D1%91%D1%82-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-%D0%B2%D1%8B%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BE%D1%82%D1%87%D1%91%D1%82%D1%8B-%D0%BA%D0%BE%D0%BC%D0%B8%D1%81%D1%81%D0%B8%D0%BE%D0%BD%D0%B5%D1%80%D0%B0-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Прайс-лист](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82-%D0%BF%D1%80%D0%B0%D0%B9%D1%81-%D0%BB%D0%B8%D1%81%D1%82%D1%8B-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created` |
+| [Тех. карта](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%82%D0%B5%D1%85.-%D0%BA%D0%B0%D1%80%D1%82%D0%B0-%D1%82%D0%B5%D1%85.-%D0%BA%D0%B0%D1%80%D1%82%D1%8B-get) |`id`, `version`, `updated`, `updatedBy`, `name`, `description`, `code`, `externalCode`|
+| [Заказ на производство](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-%D0%BD%D0%B0-%D0%BF%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `deliveryPlannedMoment`, `quantity`|
+| [Тех. операция](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D1%82%D0%B5%D1%85.-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D1%8F-%D1%82%D0%B5%D1%85.-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%B8-get) |`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `quantity` |
+| [Внутренний заказ](https://online.moysklad.ru/api/remap/1.1/doc/index.html#%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B9-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7-%D0%B2%D0%BD%D1%83%D1%82%D1%80%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5-%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D1%8B-get)|`id`,`version`, `updated`,`updatedBy`, `name`, `description`, `code`,`externalCode`,`moment`, `applicable`, `sum`, `created`, `quantity` |
 
 ## Как использовать сортировку через JSON API
 Для применения сортировки к коллекции необходимо добавить в запрос `order=[field name],[asc/desc]`, где field name - имя поля для сортировки. Опционально через запятую можно указать направление сортировки:
@@ -85,75 +85,75 @@ folder: workbook
 Сортировка также доступна одновременно для нескольких полей, поля для сортировки необходимо указывать через разделитель `;`. Например, `?order=name=asc;code=desc`.
 
 Рассмотрим применение сортировки.
-Предварительно создадим товары с наименованиями `Pencil`, `Pencil Blue`, `Pencil Red`, `Pencil 123`, `Карандаш 123`, `Карандаш зеленый`, `Карандаш желтый`, `Карандаш`, `12345`, `!!! Это карандаш`.
+Предварительно создадим товары с различными наименованиями, которые могут начинаться с латиницы, кириллицы, цифр или специальных символов. 
 ```shell
 curl -X POST \
-  http://localhost/api/remap/1.1/entity/product \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json' \
-  -d '[
-   {
-      "name":"12345",
-      "weight":0.1,
-      "weighed":true,
-      "syncId":"8b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Pencil",
-      "weight":0.01,
-      "syncId":"5b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Pencil 123",
-      "weight":0.01,
-      "syncId":"3b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Pencil Blue",
-      "weight":0.11,
-      "weighed":true
-   },
-   {
-      "name":"Pencil Red",
-      "weight":0.2,
-      "syncId":"1b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Карандаш",
-      "weight":0.1,
-      "syncId":"2b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Карандаш 123",
-      "weight":0.32,
-      "syncId":"4b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Карандаш желтый",
-      "weight":0.12,
-      "weighed":true,
-      "syncId":"7b7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"Карандаш зеленый",
-      "weight":0.4,
-      "syncId":"8c7c97cf-cf77-4f7e-b200-d264125578ab"
-   },
-   {
-      "name":"!!! Это карандаш",
-      "weight":0.1,
-      "syncId":"3d7c97cf-cf77-4f7e-b200-d264125578ab"
-   }
+https://online.moysklad.ru/api/remap/1.1/entity/product \
+-H 'Authorization: Basic token=' \
+-H 'Cache-Control: no-cache' \
+-H 'Content-Type: application/json' \
+-d '[
+ {
+"name":"12345",
+"weight":0.1,
+"weighed":true,
+"syncId":"8b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Pencil",
+"weight":0.01,
+"syncId":"5b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Pencil 123",
+"weight":0.01,
+"syncId":"3b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Pencil Blue",
+"weight":0.11,
+"weighed":true
+ },
+ {
+"name":"Pencil Red",
+"weight":0.2,
+"syncId":"1b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Карандаш",
+"weight":0.1,
+"syncId":"2b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Карандаш 123",
+"weight":0.32,
+"syncId":"4b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Карандаш желтый",
+"weight":0.12,
+"weighed":true,
+"syncId":"7b7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"Карандаш зеленый",
+"weight":0.4,
+"syncId":"8c7c97cf-cf77-4f7e-b200-d264125578ab"
+ },
+ {
+"name":"!!! Это карандаш",
+"weight":0.1,
+"syncId":"3d7c97cf-cf77-4f7e-b200-d264125578ab"
+ }
 ]'
 ```
 
-Чтобы получить коллекцию товаров, отстортированных по имени, необходимо указать поле `name` и направление сортировки, как в примере ниже
+Чтобы получить коллекцию товаров, отсортированных по имени, необходимо указать поле `name` и направление сортировки, как в примере ниже
 ```shell
 curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name' \
-  -H 'Authorization: Basic token==' \
-  -H 'Cache-Control: no-cache'
+'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name' \
+-H 'Authorization: Basic token==' \
+-H 'Cache-Control: no-cache'
 ```
 Ответ будет содержать следующий порядок по возрастанию:
 
@@ -173,9 +173,9 @@ curl -X GET \
 Изменим направление сортировки
 ```shell
 curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name,desc' \
-  -H 'Authorization: Basic token==' \
-  -H 'Cache-Control: no-cache'
+'https://online.moysklad.ru/api/remap/1.1/entity/product?order=name,desc' \
+-H 'Authorization: Basic token==' \
+-H 'Cache-Control: no-cache'
 ```
 
 |name|
@@ -194,10 +194,10 @@ curl -X GET \
 Попробуем отсортировать товары одновременно по убыванию логического поля `weighed` и по возрастанию поля `name`.
 ```shell
 curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;name' \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'
+'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;name' \
+-H 'Authorization: Basic token=' \
+-H 'Cache-Control: no-cache' \
+-H 'Content-Type: application/json'
 ```
 
 |weighed|name|
@@ -216,10 +216,10 @@ curl -X GET \
 Добавим еще сортировку по числовому полю `weight`.
 ```shell
 curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;weight,desc;name' \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'
+'https://online.moysklad.ru/api/remap/1.1/entity/product?order=weighed,desc;weight,desc;name' \
+-H 'Authorization: Basic token=' \
+-H 'Cache-Control: no-cache' \
+-H 'Content-Type: application/json'
 ```
 
 |weighed|weight|name|
@@ -239,10 +239,10 @@ curl -X GET \
 Например, применим сортировку по полю `syncId`.
 ```shell
 curl -X GET \
-  'https://online.moysklad.ru/api/remap/1.1/entity/product?order=syncId' \
-  -H 'Authorization: Basic token=' \
-  -H 'Cache-Control: no-cache' \
-  -H 'Content-Type: application/json'
+'https://online.moysklad.ru/api/remap/1.1/entity/product?order=syncId' \
+-H 'Authorization: Basic token=' \
+-H 'Cache-Control: no-cache' \
+-H 'Content-Type: application/json'
 ```
 
 |syncId|name|
@@ -258,4 +258,4 @@ curl -X GET \
 | 8c7c97cf-cf77-4f7e-b200-d264125578ab|Карандаш зеленый |
 | null |Pencil Blue |
 
-У товара `Pencil Blue` отсутствует значение поля `syncId`, поэтому при сортировке по возрастанию, оно выводится в конце. Аналогичное поведение и для других полей со значением `null`.
+У товара `Pencil Blue` отсутствует значение поля поэтому при сортировке по возрастанию, оно выводится в конце. Аналогичное поведение и для других полей со значением `null`.
