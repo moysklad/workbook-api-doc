@@ -37,6 +37,10 @@ entries:
           url: /paging.html
           output: web
 
+        - title: Сортировка
+          url: /sorting.html
+          output: web
+
         - title: Публикации
           url: /publication.html
           output: web
