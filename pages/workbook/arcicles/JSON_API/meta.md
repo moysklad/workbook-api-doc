@@ -9,19 +9,25 @@ folder: workbook
 ---
 
 # Метаданные
-Одним из ключевых понятий при работе с JSON API является понятие метаданных. Под метаданными подразумевается краткое представление сущности или результата запроса JSON API, и описывается в поле `meta`. 
+Одним из ключевых понятий при работе с JSON API является понятие метаданных. Под метаданными понимается краткое представление сущности или результата запроса JSON API, и содержится в поле `meta`. 
 Поле `meta` представляет собой json-объект со следующими атрибутами:
-* `href` - ссылка на объект 
-* `metadataHref` - cсылка на метаданные сущности
-* `type` - тип объекта
-* `mediaType` - тип данных, которые приходят в ответ от сервиса, либо отправляются в теле запроса. В рамках данного API всегда равен `application/json`
-* `uuidHref` - cсылка на объект в веб-версии МоегоСклада. Присутствует не во всех сущностях
+* `href` - ссылка на объект;
+* `metadataHref` - cсылка на метаданные сущности;
+* `type` - тип объекта;
+* `mediaType` - тип данных, который приходят в ответ от сервиса, либо отправляется в теле запроса. В рамках данного API всегда равен `application/json`;
+* `uuidHref` - cсылка на объект в веб-версии МоегоСклада. Присутствует не во всех сущностях.
 
-В JSON API выделяются несколько типов метаданных. Рассмотрим их подробнее.
+В JSON API существует несколько типов метаданных. Рассмотрим их подробнее.
 
 ## Метаданные объекта
-Возвращаемые JSON API объекты содержат поле `meta`, которое, по сути, является ссылкой на объект. Однако, `meta` является не простым полем, a составным json-элементом, содержащим краткое описание объекта.
+Возвращаемые JSON API объекты содержат поле `meta`, которое, по сути, является ссылкой на объект. Однако, `meta` не простое поле, a составной json-элемент, содержащий краткое описание объекта.
 Рассмотрим запрос контрагента
+```shell
+curl -X GET \
+  https://online.moysklad.ru/api/remap/1.1/entity/counterparty \
+  -H 'Authorization: Basic token==' \
+  -H 'Cache-Control: no-cache'
+```
 ```json
 {
     "meta": {
@@ -98,7 +104,7 @@ folder: workbook
 ```
 
 В ответе содержится несколько полей `meta`.
-Вначале описывается сам объект, с указанием тип объекта, ссылки в JSON API и ссылки на веб-версию
+Вначале описывается сам объект, с указанием типа объекта, ссылки в JSON API и ссылки на веб-версию
 ```json
 "meta": {
         "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/ab4dd5fc-d100-11e8-ac12-00080000006d",
@@ -202,7 +208,7 @@ curl -X GET \
     }
 }
 ```
-Аналогично и для значения из поля `uuidHref`
+Аналогично и для значения из поля `uuidHref` можно открыть объект в веб-версии.
 ![useful image]({{ site.url }}/images/meta/owner.png)
 
 ### Использование meta при создании/изменении объекта
@@ -335,7 +341,7 @@ curl -X POST \
 }
 ```
 
-А, теперь попробуем изменить товар, указав ему единицу измерения.
+А теперь попробуем изменить товар, указав ему единицу измерения.
 ```shell
 curl -X PUT \
   https://online.moysklad.ru/api/remap/1.1/entity/product/3b336cc5-d10a-11e8-ac12-000b00000021 \
@@ -438,5 +444,240 @@ curl -X PUT \
 ```
 
 ## Метаданные коллекции
+Для работы с пагинацией у коллекций в JSON API формируется несколько иное поле `meta`.
+Поле `meta` коллекций содержит все те же атрибуты, что и `meta` объектов, и ряд собственных атрибутов:
+* `size` - количество элементов в коллекции,
+* `limit` - максмимальное число элементов в коллекции, возвращаемых за один запрос,
+* `offset` - смещение выборки коллекции от первого элемента.
+Например, при запросе вебхуков
+```shell
+curl -X GET \
+  https://online.moysklad.ru/api/remap/1.1/entity/webhook \
+  -H 'Authorization: Basic token==' \
+  -H 'Cache-Control: no-cache'
+```
+будет следующий ответ
+```json
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook",
+        "type": "webhook",
+        "mediaType": "application/json",
+        "size": 1,
+        "limit": 25,
+        "offset": 0
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/01205b84-072c-11e8-6b01-4b1d0010fff6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/metadata",
+                "type": "webhook",
+                "mediaType": "application/json"
+            },
+            "id": "01205b84-072c-11e8-6b01-4b1d0010fff6",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "entityType": "product",
+            "url": "https://webhook.site/40adcf20-83de-4bb0-9072-6a98fe96bc44",
+            "method": "POST",
+            "enabled": false,
+            "action": "CREATE"
+        }
+    ]
+}
+```
+, где видно, что коллекция содержит один элемент, и `size` также содержит значение равное 1.
+
+Если значение атрибута `size` больше `limit`а, то дополнительно выводятся атрибуты пагинации:
+* `nextHref` - ссылка на следующую страницу коллекции,
+* `previousHref` - ссылка на предыдущую страницу коллекции.
+
+Добавим новые вебхуки и запросим их, но с лимитом равным 1
+```shell
+curl -X GET \
+  'https://online.moysklad.ru/api/remap/1.1/entity/webhook?limit=1' \
+  -H 'Authorization: Basic token==' \
+  -H 'Cache-Control: no-cache'
+  ```
+```json
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook?limit=1",
+        "type": "webhook",
+        "mediaType": "application/json",
+        "size": 3,
+        "limit": 1,
+        "offset": 0,
+        "nextHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook?limit=1&offset=1"
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/01205b84-072c-11e8-6b01-4b1d0010fff6",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/metadata",
+                "type": "webhook",
+                "mediaType": "application/json"
+            },
+            "id": "01205b84-072c-11e8-6b01-4b1d0010fff6",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "entityType": "product",
+            "url": "https://webhook.site/40adcf20-83de-4bb0-9072-6a98fe96bc44",
+            "method": "POST",
+            "enabled": false,
+            "action": "CREATE"
+        }
+    ]
+}
+```
+
+Применив лимит, была сформирована ссылка пагинации `nextHref` на следующую страницу коллекции. Перейдем по ней.
+```shell
+curl -X GET \
+  'https://online.moysklad.ru/api/remap/1.1/entity/webhook?limit=1&offset=1' \
+  -H 'Authorization: Basic token==' \
+  -H 'Cache-Control: no-cache'
+``` 
+```json
+{
+    "context": {
+        "employee": {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/context/employee",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/employee/metadata",
+                "type": "employee",
+                "mediaType": "application/json"
+            }
+        }
+    },
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook?limit=1&offset=1",
+        "type": "webhook",
+        "mediaType": "application/json",
+        "size": 3,
+        "limit": 1,
+        "offset": 1,
+        "nextHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook?offset=2&limit=1",
+        "previousHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook?offset=0&limit=1"
+    },
+    "rows": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/07598ccd-072c-11e8-7a6c-d2a90010c896",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/webhook/metadata",
+                "type": "webhook",
+                "mediaType": "application/json"
+            },
+            "id": "07598ccd-072c-11e8-7a6c-d2a90010c896",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "entityType": "variant",
+            "url": "https://webhook-convert.ru/ms2s/T053UB0V8/B7WHWQTFF/yiTBjO5xoeuv6pXJOH1TLeBe",
+            "method": "POST",
+            "enabled": false,
+            "action": "UPDATE"
+        }
+    ]
+}
+```
+Были сформированы ссылки пагинации, доступные для перехода на следующую и предыдущую страницы коллекции.
 
 ## Метаданные сущности
+Кроме использования поля метаданных в качестве внешней ссылки и представления коллекции, метаданные могут описывать непосредственно сами сущности.
+Как правило это описание вложенных сущностей, коллекций и дополнительных полей. 
+Чтобы получить метаданные сущности необходимо использовать ссылку из поля `metadataHref`.
+Запросим метаданные сущности контрагента из примера выше
+```shell
+curl -X GET \
+  https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata \
+  -H 'Authorization: Basic token==' \
+  -H 'Cache-Control: no-cache'
+```
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+        "mediaType": "application/json"
+    },
+    "attributes": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/attributes/e692a091-4067-11e3-c707-7054d21a8d1e",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "e692a091-4067-11e3-c707-7054d21a8d1e",
+            "name": "Дополнительная информация",
+            "type": "string",
+            "required": false
+        }
+    ],
+    "states": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/59cfaeaa-77db-41b1-b9a2-58977505b887",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "59cfaeaa-77db-41b1-b9a2-58977505b887",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "name": "🐤",
+            "color": 12430848,
+            "stateType": "Unsuccessful",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5766248b-825a-46ad-b025-ba56e727f428",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5766248b-825a-46ad-b025-ba56e727f428",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "name": "🐥",
+            "color": 8767198,
+            "stateType": "Regular",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/f90b59c7-4067-11e3-e217-7054d21a8d1e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "f90b59c7-4067-11e3-e217-7054d21a8d1e",
+            "accountId": "45eb22e0-0e7b-11e2-1c31-3c4a92f3a0a7",
+            "name": "🐔",
+            "color": 15106326,
+            "stateType": "Regular",
+            "entityType": "counterparty"
+        }
+    ],
+    "groups": [
+        "Альфа",
+        "Бета"
+    ]
+}
+``` 
+В данном примере по запросу вернулись значения доп.полей, статусов и групп контрагентов.
