@@ -10,7 +10,7 @@ folder: workbook
 Если вы хотите сохранить информацию, для которой нет подходящего поля в документе или справочнике, вы можете создать дополнительные поля.
 
 ### Список сущностей
-Список сущностей, у которых есть доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8)
+Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8)
 
 ### Работа с дополнительными полями в АПИ
 В рамках JSON API нельзя создавать дополнительные поля, но можно работать с уже созданными через основной интерфейс полями.
@@ -151,7 +151,10 @@ curl \
 ### Задание значений доп. полей через АПИ
 Задать значение доп. полю можно как при создании объекта, так и при его обновлении.
 
-После того, как выше мы получили идентификаторы дополнительных полей товаров, мы можем использовать их при создании новых товаров:
+После того, как выше мы получили идентификаторы дополнительных полей товаров, 
+мы можем использовать их при создании новых товаров. 
+Так как все доп. поля товара из нашего примера имеют флаг **required=false**, 
+т.е. не являются обязательными, то не обязательно задавать значения всем доп. полям:
 ```shell
 curl \
     -X POST \
@@ -205,18 +208,16 @@ curl \
               "value": 9.6
             },
             {
-              "id": "839ca663-75f7-11e8-9107-5048001126a3",
-              "name": "Спецификация",
-              "type": "file",
-              "file": {
-                "name": "filename",
-                "content": "5cYwMpOmNk5kSVr4YgZGKtXJb/7KpHVLDUawyZrD5Nf0WDhB7mS1I77VcAMqYQ8DkP/1wDLhb0X6b2JO4pdpKA=="
-              }
+              "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+              "name": "Ссылка на интернет-магазин",
+              "type": "link",
+              "value": "https://exmaple.com"
             }
         ]
     }'
 ```
-Для нового товара "Ноутбук" мы указали значения двух доп. полей - `Время работы от аккумулятора` и `Спецификация`. Так как все доп. поля товара из нашего примера имеют флаг **required=false**, т.е. не являются обязательными, то не обязательно задавать значения всем доп. полям.
+Для нового товара "Ноутбук" мы указали значения двух доп. полей - 
+`Время работы от аккумулятора` и `Ссылка на интернет-магазин`.
 
 При обновлении товара мы можем как обновить уже имеющиеся значения доп. полей, так и задать новые.
 ```shell
@@ -264,7 +265,8 @@ curl \
 + filename - Имя файла `Необходимое`
 + content - Байты файла, закодированные в base64 `Необходимое`
 
-Пример создания товара с доп. полем типа Файл приведен ниже
+Пример создания товара с доп. полем типа Файл приведен ниже.
+Для краткости приведено неполное значение содержимого файла.
 ```shell
 curl \
     -X POST \
@@ -286,6 +288,301 @@ curl \
         }
     ]
 }'
+```
+### Доп. поле типа Справочник
+Дополнительное поле типа Справочник ссылается на объект определенного справочника. 
+Это может быть один из встроенных справочников: 
+Товары, Контрагенты, Договоры, Сотрудники, Проекты, Склады. 
+Или справочник, созданный пользователем.
+
+Рассмотрим пример работы с доп. полями типа Справочник на примере контрагентов. 
+В примере для них задано два дополнительных поля: 
+встроенный справочник Проект и пользовательский справочник Регион:
+```shell
+curl \
+    -X GET \
+    -u login:password \
+    -H "Lognex-Pretty-Print-JSON: true" \
+    "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata"
+```
+
+Результат:
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+        "mediaType": "application/json"
+    },
+    "attributes": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/attributes/cf486cca-d383-11e8-ac12-000a000000d4",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "cf486cca-d383-11e8-ac12-000a000000d4",
+            "name": "[Проект]",
+            "type": "project",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/attributes/cf489b7c-d383-11e8-ac12-000a000000d5",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "customEntityMeta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/companysettings/metadata/customEntities/ac120c44-d383-11e8-ac12-000a000000c4",
+                "type": "customentitymetadata",
+                "mediaType": "application/json"
+            },
+            "id": "cf489b7c-d383-11e8-ac12-000a000000d5",
+            "name": "Регион",
+            "type": "customentity",
+            "required": false
+        }
+    ],
+    "states": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5b77c63b-d047-11e8-ac12-000b0000006b",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5b77c63b-d047-11e8-ac12-000b0000006b",
+            "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+            "name": "Новый",
+            "color": 15106326,
+            "stateType": "Regular",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5b77ddd8-d047-11e8-ac12-000b0000006c",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5b77ddd8-d047-11e8-ac12-000b0000006c",
+            "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+            "name": "Выслано предложение",
+            "color": 10774205,
+            "stateType": "Regular",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5b77eb48-d047-11e8-ac12-000b0000006d",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5b77eb48-d047-11e8-ac12-000b0000006d",
+            "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+            "name": "Переговоры",
+            "color": 40931,
+            "stateType": "Regular",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5b77f0c9-d047-11e8-ac12-000b0000006e",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5b77f0c9-d047-11e8-ac12-000b0000006e",
+            "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+            "name": "Сделка заключена",
+            "color": 8825440,
+            "stateType": "Successful",
+            "entityType": "counterparty"
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata/states/5b77f469-d047-11e8-ac12-000b0000006f",
+                "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/counterparty/metadata",
+                "type": "state",
+                "mediaType": "application/json"
+            },
+            "id": "5b77f469-d047-11e8-ac12-000b0000006f",
+            "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+            "name": "Сделка не заключена",
+            "color": 15280409,
+            "stateType": "Unsuccessful",
+            "entityType": "counterparty"
+        }
+    ],
+    "createShared": false
+}
+```
+
+Чтобы задать значение доп. поля типа Справочник 
+в поле **value** нужно передать объект, содержащий поле **meta** 
+с метаданными объекта, который будет значением доп. поля. 
+Создадим контрагента с этими доп. полями:
+```shell
+curl \
+    -X POST \
+    -u login:password \
+    -H 'Accept: application/json' \
+    -H 'Content-Type: application/json' \
+    https://online.moysklad.ru/api/remap/1.1/entity/counterparty \
+    -d '{
+    "name": "ООО Восток",
+    "attributes": [
+        {
+            "id": "cf486cca-d383-11e8-ac12-000a000000d4",
+            "name": "[Проект]",
+            "type": "project",
+            "value": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/project/c5ed49c2-d384-11e8-ac12-000a000000d8",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/project/metadata",
+                    "type": "project",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#project/edit?id=c5ed49c2-d384-11e8-ac12-000a000000d8"
+                }
+            }
+        },
+        {
+            "id": "cf489b7c-d383-11e8-ac12-000a000000d5",
+            "name": "Регион",
+            "type": "customentity",
+            "value": {
+                "meta": {
+                    "href": "https://online.moysklad.ru/api/remap/1.1/entity/customentity/ac120c44-d383-11e8-ac12-000a000000c4/b971966b-d383-11e8-ac12-000a000000ce",
+                    "metadataHref": "https://online.moysklad.ru/api/remap/1.1/entity/companysettings/metadata/customEntities/ac120c44-d383-11e8-ac12-000a000000c4",
+                    "type": "customentity",
+                    "mediaType": "application/json",
+                    "uuidHref": "https://online.moysklad.ru/app/#custom_ac120c44-d383-11e8-ac12-000a000000c4/edit?id=b971966b-d383-11e8-ac12-000a000000ce"
+                    }
+                }
+        }
+    ]
+}'
+```
+Результат:
+```json
+{
+    "meta": {
+        "href": "http://localhost/api/remap/1.1/entity/counterparty/5a5597e3-d385-11e8-ac12-000800000000",
+        "metadataHref": "http://localhost/api/remap/1.1/entity/counterparty/metadata",
+        "type": "counterparty",
+        "mediaType": "application/json",
+        "uuidHref": "http://localhost/app/#company/edit?id=5a5597e3-d385-11e8-ac12-000800000000"
+    },
+    "id": "5a5597e3-d385-11e8-ac12-000800000000",
+    "accountId": "5a0480c9-d047-11e8-ac12-000900000000",
+    "owner": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/employee/5a929317-d047-11e8-ac12-000b0000002e",
+            "metadataHref": "http://localhost/api/remap/1.1/entity/employee/metadata",
+            "type": "employee",
+            "mediaType": "application/json",
+            "uuidHref": "http://localhost/app/#employee/edit?id=5a929317-d047-11e8-ac12-000b0000002e"
+        }
+    },
+    "shared": false,
+    "group": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/group/5a05b13e-d047-11e8-ac12-000900000001",
+            "metadataHref": "http://localhost/api/remap/1.1/entity/group/metadata",
+            "type": "group",
+            "mediaType": "application/json"
+        }
+    },
+    "version": 0,
+    "updated": "2018-10-19 12:57:13",
+    "name": "ООО Восток",
+    "externalCode": "fN3pbKAWhwfAOiz3MFMsA0",
+    "archived": false,
+    "created": "2018-10-19 12:57:13",
+    "companyType": "legal",
+    "attributes": [
+        {
+            "meta": {
+                "href": "http://localhost/api/remap/1.1/entity/counterparty/metadata/attributes/cf486cca-d383-11e8-ac12-000a000000d4",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "cf486cca-d383-11e8-ac12-000a000000d4",
+            "name": "[Проект]",
+            "type": "project",
+            "value": {
+                "meta": {
+                    "href": "http://localhost/api/remap/1.1/entity/project/c5ed49c2-d384-11e8-ac12-000a000000d8",
+                    "metadataHref": "http://localhost/api/remap/1.1/entity/project/metadata",
+                    "type": "project",
+                    "mediaType": "application/json",
+                    "uuidHref": "http://localhost/app/#project/edit?id=c5ed49c2-d384-11e8-ac12-000a000000d8"
+                },
+                "name": "Проект 1"
+            }
+        },
+        {
+            "meta": {
+                "href": "http://localhost/api/remap/1.1/entity/counterparty/metadata/attributes/cf489b7c-d383-11e8-ac12-000a000000d5",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "cf489b7c-d383-11e8-ac12-000a000000d5",
+            "name": "Регион",
+            "type": "customentity",
+            "value": {
+                "meta": {
+                    "href": "http://localhost/api/remap/1.1/entity/customentity/ac120c44-d383-11e8-ac12-000a000000c4/b971966b-d383-11e8-ac12-000a000000ce",
+                    "metadataHref": "http://localhost/api/remap/1.1/entity/companysettings/metadata/customEntities/ac120c44-d383-11e8-ac12-000a000000c4",
+                    "type": "customentity",
+                    "mediaType": "application/json",
+                    "uuidHref": "http://localhost/app/#custom_ac120c44-d383-11e8-ac12-000a000000c4/edit?id=b971966b-d383-11e8-ac12-000a000000ce"
+                },
+                "name": "Восточный"
+            }
+        }
+    ],
+    "accounts": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/counterparty/5a5597e3-d385-11e8-ac12-000800000000/accounts",
+            "type": "account",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 100,
+            "offset": 0
+        }
+    },
+    "tags": [],
+    "contactpersons": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/counterparty/5a5597e3-d385-11e8-ac12-000800000000/contactpersons",
+            "type": "contactperson",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 100,
+            "offset": 0
+        }
+    },
+    "notes": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/counterparty/5a5597e3-d385-11e8-ac12-000800000000/notes",
+            "type": "note",
+            "mediaType": "application/json",
+            "size": 0,
+            "limit": 100,
+            "offset": 0
+        }
+    },
+    "state": {
+        "meta": {
+            "href": "http://localhost/api/remap/1.1/entity/counterparty/metadata/states/5b77c63b-d047-11e8-ac12-000b0000006b",
+            "metadataHref": "http://localhost/api/remap/1.1/entity/counterparty/metadata",
+            "type": "state",
+            "mediaType": "application/json"
+        }
+    },
+    "salesAmount": 0
+}
 ```
 ### Фильтрация по значению дополнительного поля
 JSON API позволяет осуществлять фильтрацию по значению дополнительного поля. На примере дополнительных полей, приведенных выше, можно отфильтровать все товары, у которых значение доп. поля `Время работы от аккумулятора` больше или равно 5:
