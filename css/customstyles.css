@@ -4,7 +4,7 @@ body {
 
 
 nav.navbar, nav.navbar-inverse {
-  background: #1c6799;
+  background: #2855af;
   min-height: 60px;
 }
 .container > div.navbar-header {
@@ -20,7 +20,7 @@ nav.navbar, nav.navbar-inverse {
     width: 60px;
     height: 60px;
     background-size: cover;
-    background: #1c6799 url(https://lognex.atlassian.net/wiki/download/attachments/109576259/xTY5Z2m2mw0.jpg?version=1&modificationDate=1510224393064&cacheVersion=1&api=v2);
+    background: #2855af url(https://uc578c2151235f2b14d9e6195f02.previews.dropboxusercontent.com/p/thumb/AAXNTsQkN8tW_OXk-MlcEgDgvuqXxyuV-LJDIEREt_AJHCeD_TuobHqQq9OK-kTDb7xKy2TEaYle2XNj5Tz23RvTqp029Wc9hM730X1obPQxjeP5FohYwBvxjDWEF5Mcm6ZhzBESx-MayBr8tFyQugDZWCu_YL_LZD5X9jv2isL1OIN779WHmUcUSZ-xteLK_6PqZVtGBPFkwOiaIUIVOolCKVTHRk9HcUNVyRb3hUZxDZf-qX98kFa20WripsD2_1rapoa5NGX6nJRFwOir9nf4/p.png?size_mode=5);
     background-size: cover;
 }
 
