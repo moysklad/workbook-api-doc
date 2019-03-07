@@ -27,4 +27,6 @@ topnav_dropdowns:
     - title: Разделы
       folderitems:
         - title: Workbook API
-          url: /first_steps.html
+          url: /workbook/api/remap/1.1/ru/index.html
+        - title: CommerceML
+          url: /workbook/apps/cml/index.html

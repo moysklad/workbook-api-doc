@@ -956,6 +956,10 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     text-decoration: none;
     padding-left: 3px;
 }
+/* do not add icon after self links */
+a[href^="https://moysklad.github.io"], a[href^="http://localhost"]:after {
+    content: ""
+}
 
 /* Strip the outbound icon when this class is present */
 a[href].noCrossRef::after,

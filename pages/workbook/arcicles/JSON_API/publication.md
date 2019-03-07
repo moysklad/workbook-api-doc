@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: publication.html
+permalink: /workbook/api/remap/1.1/ru/publication.html
 folder: workbook
 ---
 ## Публикация документов

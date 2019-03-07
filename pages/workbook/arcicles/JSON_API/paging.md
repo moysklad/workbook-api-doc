@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: paging.html
+permalink: /workbook/api/remap/1.1/ru/paging.html
 folder: workbook
 ---
 

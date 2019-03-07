@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: sorting.html
+permalink: /workbook/api/remap/1.1/ru/sorting.html
 folder: workbook
 ---
 # Сортировка

@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: attributes.html
+permalink: /workbook/api/remap/1.1/ru/attributes.html
 folder: workbook
 ---
 Если вы хотите сохранить информацию, для которой нет подходящего поля в документе или справочнике, вы можете создать дополнительные поля.
