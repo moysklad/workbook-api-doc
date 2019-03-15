@@ -4,7 +4,7 @@ body {
 
 
 nav.navbar, nav.navbar-inverse {
-  background: #1c6799;
+  background: #2855af;
   min-height: 60px;
 }
 .container > div.navbar-header {
@@ -20,7 +20,7 @@ nav.navbar, nav.navbar-inverse {
     width: 60px;
     height: 60px;
     background-size: cover;
-    background: #1c6799 url(https://lognex.atlassian.net/wiki/download/attachments/109576259/xTY5Z2m2mw0.jpg?version=1&modificationDate=1510224393064&cacheVersion=1&api=v2);
+    background: #2855af url(https://api.media.atlassian.com/file/e98ce860-0539-4da9-9134-a092cdf91fa1/image?token=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJhZjUyNzY1NC00MTFmLTRmNmMtOTY5Zi0yZjI5M2M4MWJmOTMiLCJhY2Nlc3MiOnsidXJuOmZpbGVzdG9yZTpmaWxlOmU5OGNlODYwLTA1MzktNGRhOS05MTM0LWEwOTJjZGY5MWZhMSI6WyJyZWFkIl19LCJleHAiOjE1NTI0NzI3OTIsIm5iZiI6MTU1MjQ2OTczMn0.n33rtRzLt0s07MhfzoHZnKRPuAf_N5SgsKuzDkiH8VI&client=af527654-411f-4f6c-969f-2f293c81bf93&name=X10ie2Bm.png&height=250);
     background-size: cover;
 }
 
@@ -955,6 +955,13 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     display: inline-block;
     text-decoration: none;
     padding-left: 3px;
+}
+/* do not add icon after self links */
+a[href^="https://moysklad.github.io"]:after,
+a[href^="http://localhost"]:after,
+a[href^="http://0.0.0.0"]:after,
+a[href^="http://127.0.0.1"]:after {
+    content: ""
 }
 
 /* Strip the outbound icon when this class is present */

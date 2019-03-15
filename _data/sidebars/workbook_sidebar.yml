@@ -11,7 +11,7 @@ entries:
     folderitems:
 
     - title: Первые шаги
-      url: /first_steps.html
+      url: /workbook/api/remap/1.1/ru/first_steps.html
       output: web
       type: frontmatter
 
@@ -30,26 +30,26 @@ entries:
         subfolderitems:
 
         - title: Метаданные
-          url: /meta.html
+          url: /workbook/api/remap/1.1/ru/meta.html
           output: web
 
         - title: Листание
-          url: /paging.html
+          url: /workbook/api/remap/1.1/ru/paging.html
           output: web
 
         - title: Сортировка
-          url: /sorting.html
+          url: /workbook/api/remap/1.1/ru/sorting.html
           output: web
 
         - title: Публикации
-          url: /publication.html
+          url: /workbook/api/remap/1.1/ru/publication.html
           output: web
 
         - title: Доп. поля
-          url: /attributes.html
+          url: /workbook/api/remap/1.1/ru/attributes.html
           output: web
 
     - title: Вебхуки
-      url: /webhooks.html
+      url: /workbook/api/remap/1.1/ru/webhooks.html
       output: web
       type: frontmatter

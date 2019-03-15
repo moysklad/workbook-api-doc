@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: first_steps.html
+permalink: /workbook/api/remap/1.1/ru/first_steps.html
 folder: workbook
 ---
 # Что нужно знать для начала работы с JSON API

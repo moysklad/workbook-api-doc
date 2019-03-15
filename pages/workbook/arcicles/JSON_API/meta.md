@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: meta.html
+permalink: /workbook/api/remap/1.1/ru/meta.html
 folder: workbook
 ---
 
@@ -218,7 +218,7 @@ curl -X GET \
 }
 ```
 Аналогично и для значения из поля `uuidHref` можно открыть объект в веб-версии.
-![useful image]({{ site.url }}/images/meta/owner.png)
+![useful image]({{site.url}}/images/meta/owner.png)
 
 ### Использование meta при создании/изменении объекта
 `meta` используется в качестве ссылки на другой объект, рассмотрим на примерах.

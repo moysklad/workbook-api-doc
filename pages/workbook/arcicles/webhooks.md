@@ -4,7 +4,7 @@ tags: []
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: webhooks.html
+permalink: /workbook/api/remap/1.1/ru/webhooks.html
 folder: workbook
 ---
 # Вебхуки
