@@ -1,6 +1,6 @@
 ---
 title: Вебхуки
-tags: [getting_started, api]
+tags: [getting_started, api, webhook]
 keywords:
 summary:
 sidebar: workbook_sidebar
