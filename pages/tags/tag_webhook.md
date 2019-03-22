@@ -1,8 +1,8 @@
 ---
-title: "News"
-tagName: news
+title: "Работа с вебхуками"
+tagName: webhook
 search: exclude
-permalink: tag_news.html
+permalink: tag_webhook.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

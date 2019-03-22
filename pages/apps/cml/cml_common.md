@@ -1,6 +1,6 @@
 ---
 title: CommerceML — общие сведения
-tags: []
+tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar

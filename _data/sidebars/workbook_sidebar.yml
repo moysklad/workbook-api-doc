@@ -20,7 +20,8 @@ entries:
     type: frontmatter
     folderitems:
 
-    - title: Введение
+    - title: Вебхуки
+      url: /workbook/api/remap/1.1/ru/webhooks.html
       output: web
       type: frontmatter
 
@@ -49,7 +50,4 @@ entries:
           url: /workbook/api/remap/1.1/ru/attributes.html
           output: web
 
-    - title: Вебхуки
-      url: /workbook/api/remap/1.1/ru/webhooks.html
-      output: web
-      type: frontmatter
+

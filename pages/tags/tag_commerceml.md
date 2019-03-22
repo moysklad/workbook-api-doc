@@ -1,8 +1,8 @@
 ---
-title: "Publishing pages"
-tagName: publishing
+title: "CommerceML"
+tagName: commerceml
 search: exclude
-permalink: tag_publishing.html
+permalink: tag_commerceml.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

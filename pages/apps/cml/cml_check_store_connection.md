@@ -1,6 +1,6 @@
 ---
 title: CommerceML — проверка подключения магазина
-tags: []
+tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar

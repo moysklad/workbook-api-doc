@@ -1,8 +1,8 @@
 ---
-title: "Mobile Pages"
+title: "CommerceML"
+tagName: cml
 search: exclude
-tagName: mobile
-permalink: tag_mobile.html
+permalink: tag_cml.html
 sidebar: mydoc_sidebar
 folder: tags
 ---

@@ -1,6 +1,6 @@
 ---
 title: CommerceML — добавление собственного магазина
-tags: []
+tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar
