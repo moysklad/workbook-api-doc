@@ -8,7 +8,7 @@ nav.navbar, nav.navbar-inverse {
   min-height: 60px;
 }
 .container > div.navbar-header {
-  margin-left: 60px;
+
 }
 .fa-home:before {
     margin-top: -15px;
@@ -960,7 +960,8 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 a[href^="https://moysklad.github.io"]:after,
 a[href^="http://localhost"]:after,
 a[href^="http://0.0.0.0"]:after,
-a[href^="http://127.0.0.1"]:after {
+a[href^="http://127.0.0.1"]:after,
+a[href^="https://www.moysklad.ru"]:after{
     content: ""
 }
 

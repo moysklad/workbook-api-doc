@@ -1,6 +1,6 @@
 ---
 title: Публикация документов
-tags: []
+tags: [getting_started, api]
 keywords:
 summary:
 sidebar: workbook_sidebar

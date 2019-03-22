@@ -1,6 +1,6 @@
 ---
 title: Первые шаги в АПИ МоегоСклада
-tags: []
+tags: [getting_started, api]
 keywords:
 summary:
 sidebar: workbook_sidebar

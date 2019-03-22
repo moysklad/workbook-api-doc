@@ -1,6 +1,6 @@
 ---
 title: Работа с коллекциями - сортировка
-tags: []
+tags: [getting_started, api]
 keywords:
 summary:
 sidebar: workbook_sidebar

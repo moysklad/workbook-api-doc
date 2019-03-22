@@ -1,6 +1,6 @@
 ---
 title: "Workbook API"
-keywords: sample homepage
+keywords: homepage
 tags: [getting_started]
 sidebar: workbook_sidebar
 permalink: /workbook/api/remap/1.1/ru/index.html
