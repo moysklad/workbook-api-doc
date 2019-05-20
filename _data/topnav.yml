@@ -21,7 +21,7 @@ topnav_dropdowns:
         - title: Phone API
           external_url: https://online.moysklad.ru/api/phone/1.0/doc/index.html
         - title: Форум
-          external_url: https://support.moysklad.ru/hc/ru/community/topics
+          external_url: https://ru.stackoverflow.com/questions/tagged/%D0%BC%D0%BE%D0%B9%D1%81%D0%BA%D0%BB%D0%B0%D0%B4
         - title: SDK
           external_url: https://dev.moysklad.ru/#sdk
     - title: Разделы
