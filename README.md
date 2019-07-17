@@ -1,4 +1,4 @@
-# Woorkbook API
+# Woorkbook API МойСклад 
 https://moysklad.github.io/
 
 ## Установка Jekyll локально
