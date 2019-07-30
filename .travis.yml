@@ -24,4 +24,3 @@ before_install:
 - ssh -i ./id_rsa app@${SERVER_IP_ADDRESS} pwd
 - rm deploy_key.enc deploy_key
 
-# change
