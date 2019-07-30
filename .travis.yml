@@ -1,0 +1,25 @@
+language: ruby
+cache: bundler
+env:
+- SERVER_IP_ADDRESS=dev.moysklad.ru
+branches:
+  only:
+  - master
+install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
+script:
+- jekyll build --destination site
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --quiet site/  app@${SERVER_IP_ADDRESS}:.
+  on:
+    branch: master
+before_install:
+- openssl aes-256-cbc -K $encrypted_cfa867c3c7e5_key -iv $encrypted_cfa867c3c7e5_iv
+  -in deploy_key.enc -out deploy_key -d
+- eval "$(ssh-agent -s)"
+- chmod 600 ./id_rsa
+- echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- ssh-add ./id_rsa
+- ssh -i ./id_rsa app@${SERVER_IP_ADDRESS} pwd
+- rm deploy_key.enc deploy_key
