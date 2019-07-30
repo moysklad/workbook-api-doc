@@ -18,9 +18,9 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_cfa867c3c7e5_key -iv $encrypted_cfa867c3c7e5_iv
   -in deploy_key.enc -out deploy_key -d
 - eval "$(ssh-agent -s)"
-- chmod 600 ./id_rsa
+- chmod 600 ./deploy_key
 - echo -e "Host ${SERVER_IP_ADDRESS}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- ssh-add ./id_rsa
-- ssh -i ./id_rsa app@${SERVER_IP_ADDRESS} pwd
+- ssh-add ./deploy_key
+- ssh -i ./deploy_key app@${SERVER_IP_ADDRESS} pwd
 - rm deploy_key.enc deploy_key
 
