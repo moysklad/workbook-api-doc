@@ -5,13 +5,13 @@ env:
 branches:
   only:
   - DO-720
-install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
+install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed concurrent-ruby-1.1.4
 script:
 - jekyll build --destination site
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync --list-only app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}
+  script: rsync --list-only app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}/
   #-r --delete-after --quiet site/
   on:
     branch: DO-720
