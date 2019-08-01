@@ -5,7 +5,7 @@ env:
 branches:
   only:
   - DO-720
-install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed concurrent-ruby-1.1.4
+install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
 script:
 - jekyll build --destination site
 deploy:
