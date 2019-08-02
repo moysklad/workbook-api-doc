@@ -10,10 +10,10 @@ folder: workbook
 Если вы хотите сохранить информацию, для которой нет подходящего поля в документе или справочнике, вы можете создать дополнительные поля.
 
 ### Список сущностей
-Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8){:target="_blank"}
+Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8){:target="_blank_"}
 
 ### Работа с дополнительными полями в АПИ
-В рамках JSON API нельзя создавать дополнительные поля, но можно работать с уже созданными через основной интерфейс полями.
+В рамках JSON API можно создавать дополнительные поля или работать с уже созданными через основной интерфейс.
 
 ### Получение доп. полей
 Запросить список доступных полей можно, воспользовавшись запросом метаданных необходимой вам сущности. Ниже приведен пример запроса метаданных товаров, в поле **attributes** выводится массив дополнительных полей:
@@ -148,6 +148,190 @@ curl \
 }
 ```
 
+Возможно также запросить полный список доп. полей по всем сущностям **GET /entity/type/metadata/**
+Для этого запроса доступна фильтрация по типу объекта, содержащего доп. поля. Для этого надо выполнить запрос 
+
+```shell
+curl -X GET \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata?filter=type=product \
+  
+```
+В ответ получим доп. поля товаров.
+
+
+
+### Создание нового доп. поля через АПИ
+Новое доп. поле можно создать, выполнив POST-запрос с указанием в его теле свойств добавляемого поля. Создание доп поля возможно при указании типа объекта, к которому оно будет применяться. В приведенных примерах выбраны товары. Обратите внимание, что создание двух доп. полей с одинаковыми именами невозможно.
+
+
+```shell
+curl -X POST \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes \
+  -d '{
+    "name": "Материал корпуса",
+    "type": "string"
+    }'
+```
+
+Результат:
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+    },
+    "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
+    "name": "Материал корпуса",
+    "type": "string",
+    "required": false
+}
+```
+Указанные в запросе поля являются обязательными, их достаточно для создания нового доп. поля. При создании доп. поля ему автоматически присваивается id, используя который можно в дальнейшем редактировать или удалить это поле.
+В рамках Remap 1.2 появится возможность редактировать описание доп. поля, свойство "description".
+
+Назначить созданному доп. полю какое-то значение можно в рамках изменения конкретного объекта (в данном случае товара). Это будет рассмотрено далее.
+
+### Массовое создание(обновление) новых доп. полей через АПИ
+Доступно также массовое создание доп. полей. Для этого надо передать в теле POST-запроса массив со свойствами каждого из создаваемых полей.
+Массив должен содержать данные по каждому создаваемому полю, перечисленные через запятую и заключенные в фигурные скобки. Обязательные к передаче свойтва - это имя и тип поля. Если добавить к ним id существующего доп. поля, то оно будет изменено.
+
+```shell
+curl -X POST \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes \
+  -d '[
+        {
+            "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
+            "name": "Материал корпуса (дополнение)",
+            "type": "string"
+        },
+        {
+            "name": "Наличие CD-Rom",
+            "type": "boolean"
+        },
+        {
+            "name": "Наличие type-C разъема",
+            "type": "boolean"
+        }
+      ]'
+```
+
+Результат:
+```json
+[
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/acd884ce-b44f-11e9-7ae5-884b00009002",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+        },
+        "id": "acd884ce-b44f-11e9-7ae5-884b00009002",
+        "name": "Материал корпуса (дополнение)",
+        "type": "string",
+        "required": false
+    },
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+        },
+        "id": "33b2fe47-b465-11e9-7ae5-884b0001562f",
+        "name": "Наличие CD-Rom",
+        "type": "boolean",
+        "required": false
+    },
+    {
+        "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+        },
+        "id": "33b30b2e-b465-11e9-7ae5-884b00015630",
+        "name": "Наличие type-C разъема",
+        "type": "boolean",
+        "required": false
+    }
+]
+```
+После выполнения данного запроса поле "Материал корпуса" обновится на "Материал корпуса (дополнение)". Добавятся новые поля "Наличие CD-Rom" и "Наличие type-C разъема" с типом флажок.
+
+### Редактирование доп. поля через АПИ
+Для изменения свойств существующего доп. поля необходимо выполнить PUT-запрос, содержащий его id, а в теле запроса передать изменяемые свойства. Следует учесть, что свойство "type" не может быть изменено.
+```shell
+curl -X PUT \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/9e9baa04-b455-11e9-7ae5-884b0000c7d9 \
+  -d '{
+        "name":"Наличие DVD-Rom"
+      }'
+```
+
+Результат:
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/9e9baa04-b455-11e9-7ae5-884b0000c7d9",
+        "type": "attributemetadata",
+        "mediaType": "application/json"
+    },
+    "id": "9e9baa04-b455-11e9-7ae5-884b0000c7d9",
+    "name": "Наличие DVD-Rom",
+    "type": "boolean",
+    "required": false
+}
+```
+Поле "Наличие CD-Rom" изменено на "Наличие DVD-Rom". Неуказанные свойства останутся без изменений.
+
+### Удаление доп. поля через АПИ
+Для удаления доп. поля через АПИ необходимо выполнить DELETE-запрос, содержащий id поля.
+
+```shell
+curl -X DELETE \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/9e9baa04-b455-11e9-7ae5-884b0000c7d9 \
+```
+
+### Массовое удаление доп. поля через АПИ
+Для удаления сразу нескольких доп. полей нужно выполнить следующий POST-запрос, указав в теле meta-данные удаляемых полей:
+
+```shell
+curl -X POST \
+  -u login:password \
+  -H 'Accept: application/json' \
+  -H 'Content-Type: application/json' \
+  https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/delete \
+  -d '[
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b2fe47-b465-11e9-7ae5-884b0001562f",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          }
+        },
+        {
+          "meta": {
+            "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/33b30b2e-b465-11e9-7ae5-884b00015630",
+            "type": "attributemetadata",
+            "mediaType": "application/json"
+          }
+        }
+      ]'
+``` 
+
 ### Задание значений доп. полей через АПИ
 Задать значение доп. полю можно как при создании объекта, так и при его обновлении.
 
@@ -257,7 +441,7 @@ curl \
 + Указан несуществующий id, которого нет в метаданных сущности - возникнет ошибка.
 
 ### Возможные типы доп. полей
-С возможными типами доп. полей вы можете ознакомиться в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8){:target="_blank"}.
+С возможными типами доп. полей вы можете ознакомиться в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8){:target="_blank_"}.
 
 ### Доп. поле типа Файл
 Для загрузки значения доп. поля типа файл нужно в поле **value** указать объект следующей структуры:
