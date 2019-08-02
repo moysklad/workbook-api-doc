@@ -13,6 +13,7 @@ deploy:
   skip_cleanup: true
   script: rsync --list-only app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}/
   #-r --delete-after --quiet site/
+  #insert
   on:
     branch: DO-720
 before_install:
