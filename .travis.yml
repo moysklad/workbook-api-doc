@@ -5,7 +5,7 @@ env:
 branches:
   only:
   - DO-720
-install: gem install jekyll jekyll-sitemap jekyll-paginate html-proofer jekyll-feed
+install: gem install jekyll
 script:
 - bundle install
 - jekyll build --destination site
