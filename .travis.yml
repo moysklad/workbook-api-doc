@@ -3,7 +3,7 @@ env:
 - SERVER_IP_ADDRESS=dev.moysklad.ru APP_PREFIX=workbook-api-doc
 branches:
   only:
-  - DO-720
+  - master
 install: gem install bundler jekyll
 script:
 - bundle install
@@ -11,9 +11,9 @@ script:
 deploy:
   provider: script
   skip_cleanup: true
-  script: rsync -r --delete-after --quiet site/ app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}/
+  script: rsync -r --delete-after --quiet site/ app@${SERVER_IP_ADDRESS}:./${APP_PREFIX}/!
   on:
-    branch: DO-720
+    branch: master
 before_install:
 - openssl aes-256-cbc -K $encrypted_cfa867c3c7e5_key -iv $encrypted_cfa867c3c7e5_iv
   -in deploy_key.enc -out deploy_key -d
