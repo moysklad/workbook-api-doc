@@ -7,7 +7,7 @@ branches:
 install: gem install bundler jekyll
 script:
 - bundle install
-- jekyll build --destination site
+- bundle exec jekyll build --destination site
 deploy:
   provider: script
   skip_cleanup: true
