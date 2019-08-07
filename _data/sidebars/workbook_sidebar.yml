@@ -11,7 +11,7 @@ entries:
     folderitems:
 
     - title: Первые шаги
-      url: /workbook/workbook/api/remap/1.1/ru/first_steps.html
+      url: /workbook/workbook/workbook/api/remap/1.1/ru/first_steps.html
       output: web
       type: frontmatter
 
@@ -47,7 +47,7 @@ entries:
           output: web
 
         - title: Доп. поля
-          url: /workbook/workbook/api/remap/1.1/ru/attributes.html
+          url: /workbook/workbook/workbook/api/remap/1.1/ru/attributes.html
           output: web
 
 
