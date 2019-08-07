@@ -107,7 +107,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 
 # needed for sitemap.xml file only
 # при локальной сборке необходимо закомментировать
-url: https://dev.moysklad.ru
+#url: https://dev.moysklad.ru
 # baseurl: /documentation-theme-jekyll
 
 theme: jekyll-theme-slate
