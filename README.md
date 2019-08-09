@@ -1,4 +1,6 @@
-# Workbook API МойСклад 
+[![Build Status](https://travis-ci.org/moysklad/workbook-api-doc.svg?branch=master)](https://travis-ci.org/moysklad/workbook-api-doc)
+
+# Workbook API МойСклад
 https://moysklad.github.io/
 
 ## Установка Jekyll локально
@@ -8,8 +10,14 @@ docker-compose up server
 ```
 Сайт будет доступен по http://0.0.0.0:4000/
 
+Для корректной навигации необходимо закомментировать следующую строку в `_config.yml`:
+```javascript
+url: https://dev.moysklad.ru
+```
+
+
 ## Инструкция по добавлению новых тэгов
-1\. Добавить новый тэг в выбранный md-файл в разделе `tags`. Тэги не должны содержать пробелов, разделяются между собой запятыми. 
+1\. Добавить новый тэг в выбранный md-файл в разделе `tags`. Тэги не должны содержать пробелов, разделяются между собой запятыми.
 ```
 tags: [getting_started, api]
 ```
@@ -29,6 +37,6 @@ tags: [getting_started, api]
     folder: tags
     ---
     {% include taglogic.html %}
-    
+
     {% include links.html %}
 ```
