@@ -10,10 +10,143 @@ folder: workbook
 Если вы хотите сохранить информацию, для которой нет подходящего поля в документе или справочнике, вы можете создать дополнительные поля.
 
 ### Список сущностей
-Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8){:target="_blank_"}
+Список сущностей, для которых есть возможность создать доп. поля, вы можете посмотреть в [документации](https://online.moysklad.ru/api/remap/1.1/doc/index.html#header-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0-%D1%81-%D0%B4%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8-%D0%BF%D0%BE%D0%BB%D1%8F%D0%BC%D0%B8)
 
 ### Работа с дополнительными полями в АПИ
-В рамках JSON API можно создавать дополнительные поля и работать с уже созданными через основной интерфейс. Подробно это описано в статье (??)
+В рамках JSON API можно создавать дополнительные поля и работать с уже созданными через основной интерфейс. Подробно это описано в статье [Работа с дополнительными полями через API.](https://github.com/moysklad/workbook-api-doc/blob/MC-22263/pages/workbook/articles/JSON_API/attributes_crud.md)
+
+### Получение доп. полей
+Запросить список доступных полей можно, воспользовавшись запросом метаданных необходимой вам сущности. Ниже приведен пример запроса метаданных товаров, в поле **attributes** выводится массив дополнительных полей:
+
+```shell
+curl \
+    -X GET \
+    -u login:password \
+    -H "Lognex-Pretty-Print-JSON: true" \
+    "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata"
+```
+
+Результат:
+```json
+{
+    "meta": {
+        "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata",
+        "mediaType": "application/json"
+    },
+    "attributes": [
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a2",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Особенности",
+            "type": "string",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Объем накопителя",
+            "type": "number",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Дата поступления на склад",
+            "type": "time",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/46908d10-c4e5-11e8-9109-f8fc00209552",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "customEntityMeta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/companysettings/metadata/customEntities/9e690967-1703-4038-a8f7-95ef64d54ae6",
+                "type": "customentitymetadata",
+                "mediaType": "application/json"
+            },
+            "id": "46908d10-c4e5-11e8-9109-f8fc00209552",
+            "name": "Материал изготовления",
+            "type": "customentity",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Спецификация",
+            "type": "file",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Время работы от аккумулятора",
+            "type": "double",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Подсветка клавиатуры",
+            "type": "boolean",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/839ca663-75f7-11e8-9107-5048001126a3",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "839ca663-75f7-11e8-9107-5048001126a2",
+            "name": "Описание от производителя",
+            "type": "text",
+            "required": false
+        },
+        {
+            "meta": {
+                "href": "https://online.moysklad.ru/api/remap/1.1/entity/product/metadata/attributes/7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+                "type": "attributemetadata",
+                "mediaType": "application/json"
+            },
+            "id": "7385ab6e-ad06-11e8-9ff4-34e80004fb35",
+            "name": "Ссылка на интернет-магазин",
+            "type": "link",
+            "required": false
+        }
+    ],
+    "priceTypes": [
+        {
+            "name": "Цена продажи"
+        }
+    ],
+    "createShared": true
+}
+```
 
 ### Задание значений доп. полей через АПИ
 Задать значение доп. полю можно как при создании объекта, так и при его обновлении.
