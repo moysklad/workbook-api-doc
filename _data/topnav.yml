@@ -21,7 +21,7 @@ topnav_dropdowns:
         - title: Phone API
           external_url: https://online.moysklad.ru/api/phone/1.0/doc/index.html
         - title: Loyalty API
-            external_url: https://dev.moysklad.ru/doc/api/loyalty/1.0/
+          external_url: https://dev.moysklad.ru/doc/api/loyalty/1.0/
         - title: Форум
           external_url: https://support.moysklad.ru/hc/ru/community/topics
         - title: SDK
