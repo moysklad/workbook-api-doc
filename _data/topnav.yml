@@ -20,8 +20,10 @@ topnav_dropdowns:
           external_url: https://online.moysklad.ru/api/posap/1.0/doc/index.html
         - title: Phone API
           external_url: https://online.moysklad.ru/api/phone/1.0/doc/index.html
+        - title: Loyalty API
+          external_url: https://dev.moysklad.ru/doc/api/loyalty/1.0/
         - title: Форум
-          external_url: https://ru.stackoverflow.com/questions/tagged/%D0%BC%D0%BE%D0%B9%D1%81%D0%BA%D0%BB%D0%B0%D0%B4
+          external_url: https://support.moysklad.ru/hc/ru/community/topics
         - title: SDK
           external_url: https://dev.moysklad.ru/#sdk
     - title: Разделы
@@ -29,4 +31,4 @@ topnav_dropdowns:
         - title: Workbook API
           url: /workbook/api/remap/1.1/ru/index.html
         - title: CommerceML
-          url: /workbook/apps/cml/index.html
+          url: /workbook/workbook/apps/cml/index.html
