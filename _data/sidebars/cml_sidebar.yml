@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  path: /workbook/workbook/apps/cml/
+  path: /workbook/apps/cml/
   product: CommerceML
   folders:
 
@@ -12,16 +12,16 @@ entries:
     folderitems:
 
     - title: Общие сведения
-      url: /workbook/workbook/apps/cml/index.html
+      url: /workbook/apps/cml/index.html
       output: web
       type: frontmatter
 
     - title: Добавление собственного  магазина
-      url: /workbook/workbook/apps/cml/add_own_store.html
+      url: /workbook/apps/cml/add_own_store.html
       output: web
       type: frontmatter
 
     - title: Проверка подключения магазина
-      url: /workbook/workbook/apps/cml/check_store_connection.html
+      url: /workbook/apps/cml/check_store_connection.html
       output: web
       type: frontmatter
