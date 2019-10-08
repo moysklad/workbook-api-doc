@@ -4,7 +4,7 @@ tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar
-permalink: /workbook/apps/cml/add_own_store.html
+permalink: /apps/cml/add_own_store.html
 folder: workbook
 ---
 

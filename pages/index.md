@@ -3,7 +3,7 @@ title: "Статьи"
 keywords: homepage
 tags: [getting_started]
 sidebar: workbook_sidebar
-permalink: /workbook/index.html
+permalink: /index.html
 summary:
 ---
 

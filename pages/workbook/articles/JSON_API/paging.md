@@ -4,7 +4,7 @@ tags: [getting_started, api]
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: /workbook/api/remap/1.1/ru/paging.html
+permalink: /api/remap/1.1/ru/paging.html
 folder: workbook
 ---
 

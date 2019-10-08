@@ -4,7 +4,7 @@ tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar
-permalink: /workbook/apps/cml/check_store_connection.html
+permalink: /apps/cml/check_store_connection.html
 folder: workbook
 ---
 ## Проверка работы коннектора

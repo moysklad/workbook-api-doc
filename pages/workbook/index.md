@@ -3,7 +3,7 @@ title: "Workbook API"
 keywords: homepage
 tags: [getting_started]
 sidebar: workbook_sidebar
-permalink: /workbook/api/remap/1.1/ru/index.html
+permalink: /api/remap/1.1/ru/index.html
 summary:
 ---
 

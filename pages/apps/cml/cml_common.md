@@ -4,7 +4,7 @@ tags: [cml, commerceml]
 keywords:
 summary:
 sidebar: cml_sidebar
-permalink: /workbook/apps/cml/index.html
+permalink: /apps/cml/index.html
 folder: workbook
 ---
 
