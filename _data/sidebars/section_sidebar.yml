@@ -1,0 +1,21 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  path: /workbook/
+  folders:
+
+  - title: Разделы
+    output: web
+    type: frontmatter
+    folderitems:
+
+    - title: JSON API Workbook
+      url: /workbook/api/remap/1.1/ru/index.html
+      output: web
+      type: frontmatter
+
+    - title: CommerceML
+      url: /workbook/apps/cml/index.html
+      output: web
+      type: frontmatter

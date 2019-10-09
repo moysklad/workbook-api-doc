@@ -1,12 +1,11 @@
 ---
-title: "Workbook API"
+title: "Возможности интеграции с МоимСкладом"
 keywords: homepage
-tagName: getting_started
-sidebar: workbook_sidebar
-permalink: index.html
+tags: [getting_started]
+sidebar: section_sidebar
+permalink: /index.html
 summary:
 ---
 
-{% include taglogic.html %}
-
-{% include links.html %}
+* [JSON API Workbook](/workbook/api/remap/1.1/ru/index.html) - примеры работы с JSON API МоегоСклада
+* [Создание магазина CommerceML](/workbook/apps/cml/index.html)
