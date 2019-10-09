@@ -2,52 +2,51 @@
 
 entries:
 - title: sidebar
+  path: /workbook/api/remap/1.1/ru/
   product: Workbook API
   folders:
 
-  - title: Введение
+  - title: JSON API Workbook
     output: web
     type: frontmatter
     folderitems:
+
+    - title: Введение
+      url: /workbook/api/remap/1.1/ru/index.html
+      output: web
+      type: frontmatter
 
     - title: Первые шаги
       url: /workbook/api/remap/1.1/ru/first_steps.html
       output: web
       type: frontmatter
 
-  - title: Статьи
-    output: web
-    type: frontmatter
-    folderitems:
-
     - title: Вебхуки
       url: /workbook/api/remap/1.1/ru/webhooks.html
       output: web
       type: frontmatter
 
-      subfolders:
-      - title: JSON API
-        output: web
-        subfolderitems:
+    - title: Метаданные
+      url: /workbook/api/remap/1.1/ru/meta.html
+      output: web
+      type: frontmatter
 
-        - title: Метаданные
-          url: /workbook/api/remap/1.1/ru/meta.html
-          output: web
+    - title: Листание
+      url: /workbook/api/remap/1.1/ru/paging.html
+      output: web
+      type: frontmatter
 
-        - title: Листание
-          url: /workbook/api/remap/1.1/ru/paging.html
-          output: web
+    - title: Сортировка
+      url: /workbook/api/remap/1.1/ru/sorting.html
+      output: web
+      type: frontmatter
 
-        - title: Сортировка
-          url: /workbook/api/remap/1.1/ru/sorting.html
-          output: web
+    - title: Публикации
+      url: /workbook/api/remap/1.1/ru/publication.html
+      output: web
+      type: frontmatter
 
-        - title: Публикации
-          url: /workbook/api/remap/1.1/ru/publication.html
-          output: web
-
-        - title: Доп. поля
-          url: /workbook/api/remap/1.1/ru/attributes.html
-          output: web
-
-
+    - title: Дополнительные поля
+      url: /workbook/api/remap/1.1/ru/attributes.html
+      output: web
+      type: frontmatter
