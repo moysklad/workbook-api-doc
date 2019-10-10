@@ -4,7 +4,7 @@ tags: [getting_started, api, webhook]
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: /workbook/api/remap/1.1/ru/webhooks.html
+permalink: /api/remap/1.1/ru/webhooks.html
 folder: workbook
 ---
 # Вебхуки

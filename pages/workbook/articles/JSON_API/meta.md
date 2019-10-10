@@ -4,7 +4,7 @@ tags: [getting_started, api]
 keywords:
 summary:
 sidebar: workbook_sidebar
-permalink: /workbook/api/remap/1.1/ru/meta.html
+permalink: /api/remap/1.1/ru/meta.html
 folder: workbook
 ---
 
