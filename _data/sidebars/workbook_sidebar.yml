@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  path: /workbook/api/remap/1.1/ru/
+  path: /api/remap/1.1/ru/
   product: Workbook API
   folders:
 
@@ -12,41 +12,41 @@ entries:
     folderitems:
 
     - title: Введение
-      url: /workbook/api/remap/1.1/ru/index.html
+      url: /api/remap/1.1/ru/index.html
       output: web
       type: frontmatter
 
     - title: Первые шаги
-      url: /workbook/api/remap/1.1/ru/first_steps.html
+      url: /api/remap/1.1/ru/first_steps.html
       output: web
       type: frontmatter
 
     - title: Вебхуки
-      url: /workbook/api/remap/1.1/ru/webhooks.html
+      url: /api/remap/1.1/ru/webhooks.html
       output: web
       type: frontmatter
 
     - title: Метаданные
-      url: /workbook/api/remap/1.1/ru/meta.html
+      url: /api/remap/1.1/ru/meta.html
       output: web
       type: frontmatter
 
     - title: Листание
-      url: /workbook/api/remap/1.1/ru/paging.html
+      url: /api/remap/1.1/ru/paging.html
       output: web
       type: frontmatter
 
     - title: Сортировка
-      url: /workbook/api/remap/1.1/ru/sorting.html
+      url: /api/remap/1.1/ru/sorting.html
       output: web
       type: frontmatter
 
     - title: Публикации
-      url: /workbook/api/remap/1.1/ru/publication.html
+      url: /api/remap/1.1/ru/publication.html
       output: web
       type: frontmatter
 
     - title: Дополнительные поля
-      url: /workbook/api/remap/1.1/ru/attributes.html
+      url: /api/remap/1.1/ru/attributes.html
       output: web
       type: frontmatter
