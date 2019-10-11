@@ -957,7 +957,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
     padding-left: 3px;
 }
 /* do not add icon after self links */
-a[href^="https://dev.moysklad.ru/workbook"]:after,
+a[href^="https://dev.moysklad.ru"]:after,
 a[href^="http://localhost"]:after,
 a[href^="http://0.0.0.0"]:after,
 a[href^="http://127.0.0.1"]:after,
