@@ -2,7 +2,7 @@
 
 entries:
 - title: sidebar
-  path: /workbook/
+  path: /
   folders:
 
   - title: Разделы
@@ -11,11 +11,11 @@ entries:
     folderitems:
 
     - title: JSON API Workbook
-      url: /workbook/api/remap/1.1/ru/index.html
+      url: /api/remap/1.1/ru/index.html
       output: web
       type: frontmatter
 
     - title: CommerceML
-      url: /workbook/apps/cml/index.html
+      url: /apps/cml/index.html
       output: web
       type: frontmatter
