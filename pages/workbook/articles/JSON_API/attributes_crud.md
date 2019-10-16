@@ -22,13 +22,13 @@ folder: workbook
 В web-приложении атрибуты объектов назначаются на странице списка объектов при нажатии на кнопку с шестеренкой справа. Открывается окно редактирования свойств объектов, где последним пунктом идет "Дополнительные поля". Здесь доступен просмотр, создание, редактирование и удаление атрибутов объекта. Весь этот функционал доступен и через JSON API. 
 
 Процесс создания атрибута товара через UI
-![Settings UI](https://github.com/moysklad/workbook-api-doc/blob/MC-22263/images/attributes/Screenshot_1.jpg?raw=true)
+![Settings UI](https://github.com/moysklad/workbook-api-doc/blob/master/images/attributes/Screenshot_1.jpg?raw=true)
 
-![Creating attribute](https://github.com/moysklad/workbook-api-doc/blob/MC-22263/images/attributes/Screenshot_2.jpg?raw=true)
+![Creating attribute](https://github.com/moysklad/workbook-api-doc/blob/master/images/attributes/Screenshot_2.jpg?raw=true)
 
-![Created attribute](https://github.com/moysklad/workbook-api-doc/blob/MC-22263/images/attributes/Screenshot_3.jpg?raw=true)
+![Created attribute](https://github.com/moysklad/workbook-api-doc/blob/master/images/attributes/Screenshot_3.jpg?raw=true)
 
-![UI filter](https://github.com/moysklad/workbook-api-doc/blob/MC-22263/images/attributes/Screenshot_7.jpg?raw=true)
+![UI filter](https://github.com/moysklad/workbook-api-doc/blob/master/images/attributes/Screenshot_7.jpg?raw=true)
 
 ### Создание нового дополнительного поля через JSON API
 Рассмотрим задачу добавления новых атрибутов к сущности (товару). Предположим, что хотим для имеющихся и закупаемых в будущем ноутбуков указывать материал корпуса. Для его указания будем пользоваться дополнительным полем типа строка. Этот пример рассмотрен в скриншотах web-приложения выше. Теперь попробуем сделать то же через JSON API.
