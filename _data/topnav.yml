@@ -26,9 +26,13 @@ topnav_dropdowns:
           external_url: https://support.moysklad.ru/hc/ru/community/topics
         - title: SDK
           external_url: https://dev.moysklad.ru/#sdk
+        - title: Vendor API
+          external_url: https://dev.moysklad.ru/doc/api/vendor/1.0/
     - title: Разделы
       folderitems:
         - title: Workbook API
           url: /api/remap/1.1/ru/index.html
         - title: CommerceML
           url: /apps/cml/index.html
+        - title: VendorAPI
+          url: /api/vendor/1.0/index.html

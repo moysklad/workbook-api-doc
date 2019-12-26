@@ -19,3 +19,8 @@ entries:
       url: /apps/cml/index.html
       output: web
       type: frontmatter
+
+    - title: Vendor API
+      url: /api/vendor/1.0/index.html
+      output: web
+      type: frontmatter
