@@ -12,4 +12,5 @@ summary:
 * [Терминология]({{ site.url }}/api/vendor/1.0/glossology.html)
 * [Базовая информация]({{ site.url }}/api/vendor/1.0/base_information.html)
 * [Краткая инструкция по разработке, отладке и публикации приложений]({{ site.url }}/api/vendor/1.0/instruction.html)
-* [Технические детали]({{ site.url }}/api/vendor/1.0/technical.html)
+* [Дескриптор приложения]({{ site.url }}/api/vendor/1.0/descriptor.html)
+* [Работа с Remap API 1.2]({{ site.url }}/api/vendor/1.0/remap.html)

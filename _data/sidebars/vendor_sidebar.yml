@@ -31,7 +31,12 @@ entries:
       output: web
       type: frontmatter
 
-    - title: Технические детали
-      url: /api/vendor/1.0/technical.html
+    - title: Дескриптор приложения
+      url: /api/vendor/1.0/descriptor.html
+      output: web
+      type: frontmatter
+
+    - title: Remap API 1.2
+      url: /api/vendor/1.0/remap.html
       output: web
       type: frontmatter
