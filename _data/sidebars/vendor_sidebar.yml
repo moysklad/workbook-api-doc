@@ -1,0 +1,42 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  path: /api/vendor/1.0/
+  product: Vendor API
+  folders:
+
+  - title: Vendor API
+    output: web
+    type: frontmatter
+    folderitems:
+
+    - title: Содержание
+      url: /api/vendor/1.0/index.html
+      output: web
+      type: frontmatter
+
+    - title: Терминология
+      url: /api/vendor/1.0/glossology.html
+      output: web
+      type: frontmatter
+
+    - title: Общая информация
+      url: /api/vendor/1.0/base_information.html
+      output: web
+      type: frontmatter
+
+    - title: Краткая инструкция по разработке, отладке и публикации приложений
+      url: /api/vendor/1.0/instruction.html
+      output: web
+      type: frontmatter
+
+    - title: Дескриптор приложения
+      url: /api/vendor/1.0/descriptor.html
+      output: web
+      type: frontmatter
+
+    - title: Remap API 1.2
+      url: /api/vendor/1.0/remap.html
+      output: web
+      type: frontmatter
